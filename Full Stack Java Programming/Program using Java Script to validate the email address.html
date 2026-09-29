@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+
+    <script>
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+
+            // Check presence of @ and .
+            if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+                alert("Invalid Email! '@' and '.' are required.");
+
+                document.getElementById("email").value = ""; // Clear field
+                document.getElementById("email").focus(); // Ask user to re-enter
+
+                return false;
+            }
+
+            alert("Email is valid!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Email Validation Using JavaScript</h2>
+
+    <form onsubmit="return validateEmail()">
+        <label>Enter Email:</label>
+        <input type="text" id="email" required>
+
+        <br><br>
+
+        <input type="submit" value="Validate">
+    </form>
+
+</body>
+</html>
